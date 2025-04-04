@@ -28,6 +28,57 @@
             android:gravity="center"
             android:paddingBottom="16dp"/>
 
+        <!-- Campo nombre -->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etRegisterNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Campo Apellido -->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Apellido"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etRegisterApellido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Campo ID -->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cédula"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp">            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etRegisterId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Campo Email -->
+
         <com.google.android.material.textfield.TextInputLayout
 
             android:layout_width="match_parent"
@@ -44,25 +95,25 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Campo Contraseña -->
+
         <com.google.android.material.textfield.TextInputLayout
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Contraseña"
             android:padding="12dp"
-            android:layout_marginBottom="12dp"
-
-            >
+            android:layout_marginBottom="12dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etRegisterPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
-
-                />
+                android:inputType="textPassword"/>
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Botón Confirmar Pass -->
 
         <com.google.android.material.textfield.TextInputLayout
 
@@ -80,6 +131,8 @@
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Botón Registrarse -->
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnRegisterUser"
             android:layout_width="wrap_content"
@@ -91,6 +144,8 @@
             style="@style/Widget.MaterialComponents.Button"
             />
 
+        <!-- Boton volver al Login -->
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnGoLogin"
             android:layout_width="wrap_content"
@@ -99,8 +154,7 @@
             android:layout_marginTop="10dp"
 
             app:cornerRadius="10dp"
-            style="@style/Widget.MaterialComponents.Button"
-        />
+            style="@style/Widget.MaterialComponents.Button"/>
 
 
     </LinearLayout>
