@@ -9,7 +9,7 @@
 
     <EditText
         android:id="@+id/editTextTarea"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Escribir nueva tarea"
         android:inputType="text"

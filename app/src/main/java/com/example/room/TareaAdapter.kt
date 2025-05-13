@@ -1,6 +1,5 @@
 package com.example.room
 
-
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -35,17 +34,14 @@ class TareaAdapter(
             binding.textViewDescripcion.text = tarea.descripcion
             binding.checkBoxCompletada.isChecked = tarea.completada
 
-            // Si la tarea está completada, deshabilitar el checkbox
             binding.checkBoxCompletada.isEnabled = !tarea.completada
 
-            // Listener para el checkbox
             binding.checkBoxCompletada.setOnClickListener {
                 if (!tarea.completada) {
                     onTareaCompletada(tarea)
                 }
             }
 
-            // Listener para el botón eliminar
             binding.buttonEliminar.setOnClickListener {
                 onTareaEliminada(tarea.id)
             }
