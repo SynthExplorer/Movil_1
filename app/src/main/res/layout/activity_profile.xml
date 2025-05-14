@@ -1,0 +1,102 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#000000"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/tvSaludo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¡Bienvenido!"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#FFAB00"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1E1E1E"
+        android:padding="24dp"
+        android:layout_margin="12dp"
+        android:elevation="8dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:backgroundTintMode="src_in"
+        android:clipToPadding="false"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#1E1E1E"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+
+        <TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre: "
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tvApellido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apellido: "
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tvCc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cédula: "
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email: "
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/cardBackground">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aquí podrás gestionar tus tareas, llevar un control de tus pendientes y mantenerte organizado."
+            style="@style/TextoInformativo"
+            android:padding="16dp"
+            android:layout_margin="16dp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"/>
+</LinearLayout>

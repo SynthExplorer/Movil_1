@@ -1,21 +1,19 @@
 package com.example.room
 
-
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.room.controller.TareaController
 import com.example.room.databinding.ActivityMainBinding
-import com.example.room.model.Tarea
+import com.example.room.view.HomeFragment
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,13 +26,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Inicializar el controlador
         tareaController = TareaController(this)
-
-        // Configurar el RecyclerView y el adaptador
         setupRecyclerView()
 
-        // Configurar el botón de agregar
         binding.buttonAgregar.setOnClickListener {
             val descripcion = binding.editTextTarea.text.toString()
             if (descripcion.isNotEmpty()) {
@@ -47,7 +41,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Observar cambios en la lista de tareas
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 tareaController.obtenerTareas().collectLatest { tareas ->
@@ -55,6 +48,10 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, HomeFragment())
+            .commit()
     }
 
     private fun setupRecyclerView() {
@@ -62,11 +59,23 @@ class MainActivity : AppCompatActivity() {
             onTareaCompletada = { tarea ->
                 lifecycleScope.launch {
                     tareaController.completarTarea(tarea)
+
+                    Toast.makeText(
+                        this@MainActivity,
+                        "Tarea completada: ${tarea.descripcion}",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             },
             onTareaEliminada = { id ->
                 lifecycleScope.launch {
                     tareaController.eliminarTarea(id)
+
+                    Toast.makeText(
+                        this@MainActivity,
+                        "Tarea eliminada",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
         )
