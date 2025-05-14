@@ -10,7 +10,10 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.room.controller.TareaController
 import com.example.room.databinding.ActivityMainBinding
+<<<<<<< HEAD
 import com.example.room.view.HomeFragment
+=======
+>>>>>>> 549d6bb6885fd90188fd0e99d5c1132b1b4d02b3
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -27,6 +30,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         tareaController = TareaController(this)
+<<<<<<< HEAD
+=======
+
+>>>>>>> 549d6bb6885fd90188fd0e99d5c1132b1b4d02b3
         setupRecyclerView()
 
         binding.buttonAgregar.setOnClickListener {

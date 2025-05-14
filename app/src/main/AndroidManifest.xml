@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ROOM"
         tools:targetApi="31">
+
         <activity
             android:name=".view.ProfileActivity"
             android:exported="false" />
@@ -21,11 +22,14 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".MainActivity" />
     </application>
+=======
+>>>>>>> 549d6bb6885fd90188fd0e99d5c1132b1b4d02b3
 
+    </application>
 </manifest>
